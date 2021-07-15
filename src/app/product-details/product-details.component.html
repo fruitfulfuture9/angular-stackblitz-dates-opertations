@@ -14,5 +14,36 @@
   <p>{{ today | date:'shortTime' }}</p>
   <p>{{ today | date:'mm:ss' }}</p>
   <p>{{ sampleDate | date:'MM/dd/yyyy' }}</p>
+  <p>{{ sampleStr | date:'MM/dd/yyyy' }}</p>
   <p>Age is: {{ age}}</p>
+
+  <select>
+    <option value=""></option>
+    <option value="MM/dd/yyyy">[{{today | date:'MM/dd/yyyy'}}]</option>
+    <option value="EEEE, MMMM d, yyyy"
+      >[{{today | date:'EEEE, MMMM d, yyyy'}}]</option
+    >
+    <option value="EEEE, MMMM d, yyyy h:mm a"
+      >[{{today | date:'EEEE, MMMM d, yyyy h:mm a'}}]</option
+    >
+    <option value="EEEE, MMMM d, yyyy h:mm:ss a"
+      >[{{today | date:'EEEE, MMMM d, yyyy h:mm:ss a'}}]</option
+    >
+    <option value="MM/dd/yyyy h:mm a"
+      >[{{today | date:'MM/dd/yyyy h:mm a'}}]</option
+    >
+    <option value="MM/dd/yyyy h:mm:ss a"
+      >[{{today | date:'MM/dd/yyyy h:mm:ss a'}}]</option
+    >
+    <option value="MMMM d">[{{today | date:'MMMM d'}}]</option>
+    <option value="yyyy-MM-ddTHH:mm:ss"
+      >[{{today | date:'yyyy-MM-ddTHH:mm:ss'}}]</option
+    >
+    <option value="h:mm a">[{{today | date:'h:mm a'}}]</option>
+    <option value="h:mm:ss a">[{{today | date:'h:mm:ss a'}}]</option>
+    <option value="EEEE, MMMM d, yyyy hh:mm:ss a"
+      >[{{today | date:'EEEE, MMMM d, yyyy hh:mm:ss a'}}]</option
+    >
+    <option value="MMMM yyyy">[{{today | date:'MMMM yyyy'}}]</option>
+  </select>
 </div>

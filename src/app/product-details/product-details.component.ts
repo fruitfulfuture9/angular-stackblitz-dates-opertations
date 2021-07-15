@@ -11,6 +11,7 @@ import { CartService } from '../cart.service';
 export class ProductDetailsComponent implements OnInit {
   product;
   today: number = Date.now();
+  sampleStr: string = '1980-04-20';
   sampleDate: Date = new Date('1980-04-20');
   age: Number;
 
