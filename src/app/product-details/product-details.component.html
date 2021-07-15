@@ -1,0 +1,17 @@
+<h2>Product Details</h2>
+<div *ngIf="product">
+  <h3>{{ product.name }}</h3>
+  <h4>{{ product.price | currency }}</h4>
+  <p>{{ product.description }}</p>
+  <button (click) = "addToCart(product)">
+    Buy
+  </button>
+
+  <p>The time is {{today | date:'h:mm a z'}}</p>
+
+  <p>{{ today | date }} </p>
+  <p>{{ today | date:'medium' }} </p>
+  <p>{{ today | date:'shortTime' }}</p>
+  <p>{{ today | date:'mm:ss' }} </p>
+  <p>{{ sampleDate | date:'MM/dd/yyyy' }}</p>
+</div>
