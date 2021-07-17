@@ -14,6 +14,7 @@ export class ProductDetailsComponent implements OnInit {
   sampleStr: string = '1980-04-20';
   sampleDate: Date = new Date('1980-04-20');
   age: Number;
+  lengthMins: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,6 +27,10 @@ export class ProductDetailsComponent implements OnInit {
     });
 
     this.age = this.calculateAge(this.sampleDate);
+    let startDate: Date = new Date('2018-11-29 10:49:07.4154497');
+    let endDate: Date = new Date('2018-11-29 10:59:49.9396033');
+
+    this.lengthMins = this.calculateMins(startDate, endDate);
   }
 
   addToCart(product) {
@@ -37,5 +42,15 @@ export class ProductDetailsComponent implements OnInit {
     let timeDiff = Math.abs(Date.now() - dob.getTime());
     let age = Math.floor(timeDiff / (1000 * 3600 * 24) / 365.25);
     return age;
+  }
+
+  calculateMins(startDate: Date, endDate: Date): number {
+    // let startDate1 = new Date('2018-11-29 10:49:07.4154497');
+    // let endDate1 = new Date('2018-11-29 10:49:49.9396033');
+    let diffMs = startDate.getTime() - endDate.getTime();
+    let diffMins = Math.abs(((diffMs % 86400000) % 3600000) / 60000); // minutes
+    console.log(diffMins + 'minutes');
+
+    return diffMins;
   }
 }
